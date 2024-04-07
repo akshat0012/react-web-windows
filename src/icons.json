@@ -1,0 +1,50 @@
+{
+
+    "Explorer": "explorer.svg",
+    "ControlCenter": "controlCenter.svg",
+    "TaskbarCortana": "TaskbarCortana.svg",
+    "ShowWindows": "Glyph.svg",
+    "Volume": "Volume.svg",
+    "More": "More.svg",
+    "Wifi": "Wifi.svg",
+
+
+    "Microsoft Edge": "microsoft-edge.svg",
+    "Chrome": "Chrome.svg",
+    "Groove Music": "groove.svg",
+    "Mail": "mail.svg",
+    "Excel": "excel.svg",
+    "Maps": "maps.svg",
+    "Microsoft Store": "store.svg",
+    "Microsoft todo": "todo.svg",
+    "Office": "Office.svg",
+    "Weather": "weather.svg",
+    "Photos": "Photos.svg",
+
+    "Spotify": "Spotify.svg",
+    "Discord": "Discord.svg",
+
+    "Visual Studio": "VisualStudio.svg",
+    "Terminal": "Terminal.svg",
+    "Notepad": "Notepad.svg",
+    
+    "Camera": "camera.svg",
+    "Cortana": "Cortana.svg",
+    "Calender": "calender.svg",
+    "Alarms & Clock": "clock.svg",
+    "Calculator": "calculator.svg",
+    "Settings": "Settings.svg",
+    "SideMenuPhotos": "SideMenuPhotos.svg",
+    "Power": "Power.svg",
+
+
+    "Connect": "Connect.svg",
+    "Project": "Project.svg",
+    "Location": "Location.svg",
+
+    "notificationDismiss": "Dismiss.svg",
+    "setFlag": "SetFlag.svg",
+    "mailReply": "mailReply.svg"
+
+
+}
