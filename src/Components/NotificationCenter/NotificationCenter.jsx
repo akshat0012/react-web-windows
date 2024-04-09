@@ -15,7 +15,7 @@ function NotificationCenter(props) {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.1, type: "easeOut" }}
         ref={props.Ref}
-        className="flex flex-col justify-between absolute z-[4] bg-[#f2f2f2] h-[100vh] w-[500px] text-black right-0 bottom-[48.99px] overflow-hidden"
+        className="flex flex-col justify-between absolute z-[4] bg-[#f2f2f2] h-[100vh] w-[500px] text-black right-0 bottom-[48.99px] overflow-hidden "
       >
       <div className='h-5/6'>
         {/* Heading Section */}
