@@ -17,7 +17,7 @@ function Application(props) {
         dragElastic = {0}
         dragMomentum = {false}
         dragConstraints = {props.Ref}
-        className="absolute z-[3] bg-[#d1dbe9] h-[600px] w-[800px] text-black overflow-hidden rounded-md shadow-xl "
+        className="absolute z-[3] bg-[#d1dbe9] h-[600px] w-[800px] text-black overflow-hidden rounded-md shadow-xl"
       >
       <div className="pl-2 pt-1 pb-1 pr-3 flex items-center justify-between">
         {/* Header */}

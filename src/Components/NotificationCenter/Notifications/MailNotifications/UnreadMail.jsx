@@ -8,7 +8,7 @@ function UnreadMail() {
                 <img src={icons["Mail"]}/>
                 <h1>Mail</h1>
             </div>
-            <div className='flex items-start gap-2 mt-4 justify-center bg-zinc-200 p-8 rounded-xl'>
+            <div className='flex items-start gap-2 mt-4 justify-center bg-zinc-200 p-6 rounded-xl'>
                 {/* Card Goes here */}
                 <div className='h-1/3 m-3'>
                     <img src='peter.png' className='h-[70px] w-[70px] rounded-full' />

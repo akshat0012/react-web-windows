@@ -27,7 +27,7 @@ function StartMenu(props) {
         animate = {{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2 ,type: "easeOut"}}
         ref={props.Ref} 
-        className="absolute z-[4] bg-[#d1dbe9] h-[650px] w-[750px] text-black flex bottom-[48.99px]"
+        className="absolute z-[4] bg-[#d1dbe9] h-[650px] w-[750px] text-black flex bottom-[45px]"
       >
         <div className="w-[7%] flex flex-col ml-3 mt-3 mb-3 justify-between items-center">
           <div>

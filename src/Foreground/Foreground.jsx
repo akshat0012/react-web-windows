@@ -7,9 +7,83 @@ import DesktopIcon from "../Components/Desktop/DesktopIcon";
 function Foreground() {
 
   const ForegroundRef = useRef(null);
+
+
+  const parentFunction = () => {
+    console.log("Called Parent");
+  }
+
+  const [applicationsState, setApplicationsState] = useState({
+    Explorer: false,
+    Edge: false,
+    Store: false,
+    Mail: false
+  });
+
+  const toggleApplicationState = (appName) => {
+    setApplicationsState(prevState => ({
+      ...prevState,
+      [appName]: !prevState[appName],
+    }));
+  };
+
+  const handleExplorer = () => {
+    toggleApplicationState('Explorer');
+  };
+
+  const handleStore = () => {
+    toggleApplicationState('Store');
+  }
+
+  const handleEdge = () => {
+    toggleApplicationState('Edge');
+  };
+
+  const handleMail = () => {
+    toggleApplicationState('Mail');
+  }
+  
   return (
     <div ref={ForegroundRef} className='relative z-[4] text-white h-screen w-screen select-none overflow-hidden'>
-      <div className="flex flex-row gap-5 md:flex-col">
+
+
+      {applicationsState.Explorer && (
+        <Application
+          applicationName="Explorer"
+          applicationIcon={icons['Explorer']}
+          closeApplication={() => toggleApplicationState('Explorer')}
+          foregroundRef={ForegroundRef}
+        />
+      )}
+
+      {applicationsState.Edge && (
+        <Application
+          applicationName="Edge"
+          applicationIcon={icons['Microsoft Edge']}
+          closeApplication={() => toggleApplicationState('Edge')}
+          foregroundRef={ForegroundRef}
+        />
+      )}   
+
+      {applicationsState.Store && (
+        <Application
+          applicationName="Store"
+          applicationIcon={icons['Microsoft Store']}
+          closeApplication={() => toggleApplicationState('Store')}
+          foregroundRef={ForegroundRef}
+        />
+      )}        
+
+      {applicationsState.Mail && (
+        <Application
+          applicationName="Mail"
+          applicationIcon={icons['Mail']}
+          closeApplication={() => toggleApplicationState('Mail')}
+          foregroundRef={ForegroundRef}
+        />
+      )}
+
+      <div className="flex flex-col gap-5">
         <DesktopIcon 
           Ref = {ForegroundRef}
           iconName = {"Chrome"}
@@ -29,7 +103,13 @@ function Foreground() {
         />
       </div>
       <div className="fixed w-full bottom-0"> {/* Taskbar wrapper */}
-          <Taskbar ForegroundReference = {ForegroundRef} />
+          <Taskbar 
+            ForegroundReference = {ForegroundRef}
+            handleExplorer = {handleExplorer}
+            handleEdge = {handleEdge}
+            handleStore = {handleStore}
+            handleMail = {handleMail}
+          />
       </div>
     </div>
   )
