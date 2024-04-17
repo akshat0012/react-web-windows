@@ -10,7 +10,7 @@ function ToggleBox(props) {
   return (
     <>
       <div 
-        className={`text-black ${isSelected ? 'bg-[#0078d4] text-white' : 'bg-[#e4e4e7]'} flex flex-col items-start justify-center gap-3 p-3 rounded-xl`}
+        className={`text-black ${isSelected ? 'bg-[#0078d4] text-white' : 'bg-[#e4e4e7]'} flex flex-col items-start justify-center gap-3 p-3 rounded-md`}
         onClick={handleToggleButtonClick}
       >
         <img src={props.icon} className={` ${isSelected && 'invert'} h-[25px] w-[25px]`} />

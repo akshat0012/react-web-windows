@@ -20,7 +20,7 @@ function NotificationCenter(props) {
         </div>
 
         {/* Notification Center */}
-        <div className='h-full flex flex-col overflow-scroll lg:h-2/3'>
+        <div className='h-full flex flex-col overflow-scroll lg:h-2/3 shadow-inner'>
           <UnreadMail />
           <DownloadCompleteNotification />
           <UnreadMail />

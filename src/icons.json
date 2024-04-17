@@ -27,6 +27,7 @@
     "Visual Studio": "VisualStudio.svg",
     "Terminal": "Terminal.svg",
     "Notepad": "Notepad.svg",
+    "Reddit": "Reddit.svg",
     
     "Camera": "camera.svg",
     "Cortana": "Cortana.svg",
@@ -45,6 +46,5 @@
     "notificationDismiss": "Dismiss.svg",
     "setFlag": "SetFlag.svg",
     "mailReply": "mailReply.svg"
-
 
 }

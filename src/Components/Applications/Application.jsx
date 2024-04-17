@@ -30,9 +30,10 @@ function Application(props) {
 
         </div>
       </div> 
-      <div className="h-full flex items-center justify-center bg-zinc-900">
+      <div className="h-full flex flex-col gap-4 items-center justify-center bg-zinc-900">
         {/* Body of the Application */}
         <img src={props.applicationIcon} className="h-[100px] w-[100px]"/>
+        <span className="text-xl text-white">Nothing here yet 🤗 </span>
       </div>
       </motion.div>
     </>

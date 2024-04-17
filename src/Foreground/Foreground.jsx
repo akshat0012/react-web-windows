@@ -17,7 +17,8 @@ function Foreground() {
     Explorer: false,
     Edge: false,
     Store: false,
-    Mail: false
+    Mail: false,
+    Reddit: false
   });
 
   const toggleApplicationState = (appName) => {
@@ -29,6 +30,10 @@ function Foreground() {
 
   const handleExplorer = () => {
     toggleApplicationState('Explorer');
+  };
+
+  const handleReddit = () => {
+    toggleApplicationState('Reddit');
   };
 
   const handleStore = () => {
@@ -45,7 +50,6 @@ function Foreground() {
   
   return (
     <div ref={ForegroundRef} className='relative z-[4] text-white h-screen w-screen select-none overflow-hidden'>
-
 
       {applicationsState.Explorer && (
         <Application
@@ -83,6 +87,16 @@ function Foreground() {
         />
       )}
 
+      {applicationsState.Reddit && (
+        <Application
+          applicationName="Reddit"
+          applicationIcon={icons['Reddit']}
+          closeApplication={() => toggleApplicationState('Reddit')}
+          foregroundRef={ForegroundRef}
+        />
+      )}
+
+
       <div className="flex flex-col gap-5">
         <DesktopIcon 
           Ref = {ForegroundRef}
@@ -102,15 +116,20 @@ function Foreground() {
           Icon={icons['Spotify']}
         />
       </div>
-      <div className="fixed w-full bottom-0"> {/* Taskbar wrapper */}
+
+      <div className="z-[10] fixed w-full bottom-0"> {/* Taskbar wrapper */}
           <Taskbar 
             ForegroundReference = {ForegroundRef}
             handleExplorer = {handleExplorer}
             handleEdge = {handleEdge}
             handleStore = {handleStore}
             handleMail = {handleMail}
+            handleReddit = {handleReddit}
           />
       </div>
+
+
+
     </div>
   )
 }

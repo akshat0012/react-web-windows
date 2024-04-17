@@ -57,6 +57,10 @@ function Taskbar(props) {
     console.log("Opened Edge")
     props.handleEdge();
   }
+  function openReddit() {
+    console.log("Opened Reddit")
+    props.handleReddit();
+  }
 
   return (
     <div className="absolute bg-[#dfdfdf] max-h-[45px] w-full text-black flex items-center justify-between gap-10 bottom-0">
@@ -71,7 +75,7 @@ function Taskbar(props) {
           <LiaSearchSolid size={25} />
           Type here to search
         </div>
-        <div className="flex gap-8 min-w-[344px]">
+        <div className="flex gap-8 min-w-[390px]">
           <img src={icons['TaskbarCortana']} className="h-[28px] w-[28px]" />
           <img src={icons['ShowWindows']} className="h-[28px] w-[28px]" />
           <button onClick={openExplorer}>
@@ -86,10 +90,13 @@ function Taskbar(props) {
           <button onClick={openMail}>
           <img src={icons['Mail']} className="h-[28px] w-[28px]" />
           </button>
+          <button onClick={openReddit}>
+          <img src={icons['Reddit']} className="h-[28px] w-[28px]" />
+          </button>
         </div>
       </div>
 
-      <div className="flex gap-4 items-center justify-center mr-3">
+      <div className="flex gap-5 items-center justify-center mr-3">
         <img src={icons['More']} className="h-[16px] w-[16px]" />
         <img src={icons['Wifi']} className="h-[16px] w-[16px]" />
         <img src={icons['Volume']} className="h-[20px] w-[20px]" />
