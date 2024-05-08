@@ -63,46 +63,48 @@ function Taskbar(props) {
   }
 
   return (
-    <div className="absolute bg-[#dfdfdf] max-h-[45px] w-full text-black flex items-center justify-between gap-10 bottom-0">
-      {isNotificatioCenterOpen && <NotificationCenter Ref={notificationCenterRef} />}
+    <>
       {isStartMenuOpen && <StartMenu Ref={startMenuRef} />}
+      <div className="absolute z-[20] bg-[#dfdfdf] max-h-[45px] w-full text-black flex items-center justify-between gap-10 bottom-0">
+        {isNotificatioCenterOpen && <NotificationCenter Ref={notificationCenterRef} />}
+        <div className="flex items-center gap-3">
+          <button className="pl-3 pr-[1.25rem] min-h-[45px]" onClick={handleStartButton} ref={toggleButtonRef}>
+            <GrWindows size={25} />
+          </button>
+          <div className="flex gap-8 min-w-[390px]">
+            <button onClick={openExplorer}>
+              <img src={icons['Explorer']} className="h-[28px] w-[28px]" />
+            </button>
+            <button onClick={openEdge}>
+              <img src={icons['Microsoft Edge']} className="h-[28px] w-[28px]" />
+            </button>
+            <button onClick={openStore}>
+              <img src={icons['Microsoft Store']} className="h-[28px] w-[28px]" />
+            </button>
+            <button onClick={openMail}>
+              <img src={icons['Mail']} className="h-[28px] w-[28px]" />
+            </button>
+            <button onClick={openReddit}>
+              <img src={icons['Reddit']} className="h-[28px] w-[28px]" />
+            </button>
+          </div>
+        </div>
 
-      <div className="flex items-center gap-3">
-        <button className="pl-3 pr-[1.25rem] min-h-[45px]" onClick={handleStartButton} ref={toggleButtonRef}>
-          <GrWindows size={25} />
-        </button>
-        <div className="flex gap-8 min-w-[390px]">
-          <button onClick={openExplorer}>
-            <img src={icons['Explorer']} className="h-[28px] w-[28px]" />
-          </button>
-          <button onClick={openEdge}>
-            <img src={icons['Microsoft Edge']} className="h-[28px] w-[28px]" />
-          </button>
-          <button onClick={openStore}>
-            <img src={icons['Microsoft Store']} className="h-[28px] w-[28px]" />
-          </button>
-          <button onClick={openMail}>
-          <img src={icons['Mail']} className="h-[28px] w-[28px]" />
-          </button>
-          <button onClick={openReddit}>
-          <img src={icons['Reddit']} className="h-[28px] w-[28px]" />
+        <div className="flex gap-5 items-center justify-center mr-3">
+          <img src={icons['More']} className="h-[16px] w-[16px]" />
+          <img src={icons['Wifi']} className="h-[16px] w-[16px]" />
+          <img src={icons['Volume']} className="h-[20px] w-[20px]" />
+          <div className="flex flex-col items-center">
+            <span>10:00 AM</span>
+            <span>9/20/2020</span>
+          </div>
+          <button onClick={handleNotificationCenter}>
+            <img src={icons['ControlCenter']} className="min-h-[20px] min-w-[20px]" />
           </button>
         </div>
-      </div>
 
-      <div className="flex gap-5 items-center justify-center mr-3">
-        <img src={icons['More']} className="h-[16px] w-[16px]" />
-        <img src={icons['Wifi']} className="h-[16px] w-[16px]" />
-        <img src={icons['Volume']} className="h-[20px] w-[20px]" />
-        <div className="flex flex-col items-center">
-          <span>10:00 AM</span>
-          <span>9/20/2020</span>
-        </div>
-        <button onClick={handleNotificationCenter}>
-          <img src={icons['ControlCenter']} className="min-h-[20px] min-w-[20px]" />
-        </button>
       </div>
-    </div>
+    </>
   );
 }
 

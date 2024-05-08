@@ -23,11 +23,12 @@ function StartMenu(props) {
   return (
     <>
       <motion.div 
-        initial = {{ y: 100, opacity: 1 }}
-        animate = {{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.2 ,type: "easeOut"}}
+        initial = {{ y: 100 }}
+        animate = {{ y: 0 }}
+        transition={{ duration: 0.2, type: "easeOut"}}
         ref={props.Ref} 
-        className="absolute z-[4] bg-[#d1dbe9] h-[650px] w-[750px] text-black flex bottom-[45px]"
+        className="absolute z-[22] bg-[#d1dbe9] h-[650px] w-[750px] text-black flex bottom-[45px] rounded-tr-xl shadow-xl"
+        style={{zIndex: 10}}
       >
         <div className="w-[7%] flex flex-col ml-3 mt-3 mb-3 justify-between items-center">
           <div>

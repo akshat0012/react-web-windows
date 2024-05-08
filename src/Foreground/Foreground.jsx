@@ -8,11 +8,6 @@ function Foreground() {
 
   const ForegroundRef = useRef(null);
 
-
-  const parentFunction = () => {
-    console.log("Called Parent");
-  }
-
   const [applicationsState, setApplicationsState] = useState({
     Explorer: false,
     Edge: false,
@@ -117,18 +112,14 @@ function Foreground() {
         />
       </div>
 
-      <div className="z-[10] fixed w-full bottom-0"> {/* Taskbar wrapper */}
-          <Taskbar 
-            ForegroundReference = {ForegroundRef}
-            handleExplorer = {handleExplorer}
-            handleEdge = {handleEdge}
-            handleStore = {handleStore}
-            handleMail = {handleMail}
-            handleReddit = {handleReddit}
-          />
-      </div>
-
-
+      <Taskbar 
+        ForegroundReference = {ForegroundRef}
+        handleExplorer = {handleExplorer}
+        handleEdge = {handleEdge}
+        handleStore = {handleStore}
+        handleMail = {handleMail}
+        handleReddit = {handleReddit}
+      />
 
     </div>
   )
