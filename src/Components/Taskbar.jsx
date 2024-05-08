@@ -10,6 +10,7 @@ function Taskbar(props) {
 
   const [isStartMenuOpen, setStartMenu] = useState(false);
   const [isNotificatioCenterOpen, setNotificationCenter] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   const handleStartButton = () => {
     setStartMenu(!isStartMenuOpen);
@@ -36,8 +37,13 @@ function Taskbar(props) {
 
     document.addEventListener('mousedown', handleClickOutside);
 
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+ 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+     clearInterval(timer);
+     document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [startMenuRef, toggleButtonRef]);
 
@@ -94,9 +100,9 @@ function Taskbar(props) {
           <img src={icons['More']} className="h-[16px] w-[16px]" />
           <img src={icons['Wifi']} className="h-[16px] w-[16px]" />
           <img src={icons['Volume']} className="h-[20px] w-[20px]" />
-          <div className="flex flex-col items-center">
-            <span>10:00 AM</span>
-            <span>9/20/2020</span>
+          <div className="flex flex-col items-center min-w-[70px]">
+            <span>{currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+            <span>{currentTime.toLocaleDateString()}</span>
           </div>
           <button onClick={handleNotificationCenter}>
             <img src={icons['ControlCenter']} className="min-h-[20px] min-w-[20px]" />

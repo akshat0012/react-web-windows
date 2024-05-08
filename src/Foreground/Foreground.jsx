@@ -92,7 +92,7 @@ function Foreground() {
       )}
 
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 m-2">
         <DesktopIcon 
           Ref = {ForegroundRef}
           iconName = {"Chrome"}
