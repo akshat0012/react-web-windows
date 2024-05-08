@@ -67,17 +67,11 @@ function Taskbar(props) {
       {isNotificatioCenterOpen && <NotificationCenter Ref={notificationCenterRef} />}
       {isStartMenuOpen && <StartMenu Ref={startMenuRef} />}
 
-      <div className="flex items-center">
+      <div className="flex items-center gap-3">
         <button className="pl-3 pr-[1.25rem] min-h-[45px]" onClick={handleStartButton} ref={toggleButtonRef}>
           <GrWindows size={25} />
         </button>
-        <div className="mr-[1.25rem] min-w-[344px] max-h-[48.99px] p-3 pr-20 flex gap-4 bg-white border-2 border-zinc-900">
-          <LiaSearchSolid size={25} />
-          Type here to search
-        </div>
         <div className="flex gap-8 min-w-[390px]">
-          <img src={icons['TaskbarCortana']} className="h-[28px] w-[28px]" />
-          <img src={icons['ShowWindows']} className="h-[28px] w-[28px]" />
           <button onClick={openExplorer}>
             <img src={icons['Explorer']} className="h-[28px] w-[28px]" />
           </button>
