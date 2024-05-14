@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import UnreadMail from './Notifications/MailNotifications/UnreadMail'; 
 import DownloadCompleteNotification from './Notifications/StoreNotifications/DownloadCompleteNotification';
 import ToggleBox from './ToggleBox';

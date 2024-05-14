@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
-
+import { motion, AnimatePresence } from "framer-motion"
 import Application from "../Components/Applications/Application"
-import Taskbar from "../Components/Taskbar" 
+import Taskbar from "../Components/Taskbar"
 import icons from '../icons.json'
 import DesktopIcon from "../Components/Desktop/DesktopIcon";
 function Foreground() {
@@ -19,9 +19,16 @@ function Foreground() {
   const toggleApplicationState = (appName) => {
     setApplicationsState(prevState => ({
       ...prevState,
-      [appName]: !prevState[appName],
+      [appName]: prevState[appName] ? prevState[appName] : !prevState[appName],
     }));
   };
+
+  const closeApp = (appName) => {
+    setApplicationsState(prevState => ({
+      ...prevState,
+      [appName]: false,
+    })); 
+  }
 
   const handleExplorer = () => {
     toggleApplicationState('Explorer');
@@ -42,83 +49,59 @@ function Foreground() {
   const handleMail = () => {
     toggleApplicationState('Mail');
   }
-  
+
   return (
     <div ref={ForegroundRef} className='relative z-[4] text-white h-screen w-screen select-none overflow-hidden'>
 
-      {applicationsState.Explorer && (
-        <Application
-          applicationName="Explorer"
-          applicationIcon={icons['Explorer']}
-          closeApplication={() => toggleApplicationState('Explorer')}
-          foregroundRef={ForegroundRef}
-        />
-      )}
 
-      {applicationsState.Edge && (
-        <Application
-          applicationName="Edge"
-          applicationIcon={icons['Microsoft Edge']}
-          closeApplication={() => toggleApplicationState('Edge')}
-          foregroundRef={ForegroundRef}
-        />
-      )}   
+      {Object.entries(applicationsState).map(([appName]) => (
+        // enclose this in a div to get the exit animation for <Application /> <AnimatePresence /> 
+        <AnimatePresence key={appName}>
+          {applicationsState[appName] && (
+            <motion.div
+              key={appName}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.09 }}
+            >
+              <Application
+                key={appName}
+                applicationName={appName}
+                applicationIcon={icons[appName]}
+                closeApplication={() => closeApp(appName)}
+                foregroundRef={ForegroundRef}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      ))}
 
-      {applicationsState.Store && (
-        <Application
-          applicationName="Store"
-          applicationIcon={icons['Microsoft Store']}
-          closeApplication={() => toggleApplicationState('Store')}
-          foregroundRef={ForegroundRef}
-        />
-      )}        
-
-      {applicationsState.Mail && (
-        <Application
-          applicationName="Mail"
-          applicationIcon={icons['Mail']}
-          closeApplication={() => toggleApplicationState('Mail')}
-          foregroundRef={ForegroundRef}
-        />
-      )}
-
-      {applicationsState.Reddit && (
-        <Application
-          applicationName="Reddit"
-          applicationIcon={icons['Reddit']}
-          closeApplication={() => toggleApplicationState('Reddit')}
-          foregroundRef={ForegroundRef}
-        />
-      )}
-
-
-      <div className="flex flex-col gap-5 m-2">
-        <DesktopIcon 
-          Ref = {ForegroundRef}
-          iconName = {"Chrome"}
+      <div className="flex flex-col items-start gap-5 m-2">
+        <DesktopIcon
+          Ref={ForegroundRef}
+          iconName={"Chrome"}
           Icon={icons['Chrome']}
         />
 
-        <DesktopIcon 
-          Ref = {ForegroundRef}
-          iconName = {"Discord"}
+        <DesktopIcon
+          Ref={ForegroundRef}
+          iconName={"Discord"}
           Icon={icons['Discord']}
         />
 
-        <DesktopIcon 
-          Ref = {ForegroundRef}
-          iconName = {"Spotify"}
+        <DesktopIcon
+          Ref={ForegroundRef}
+          iconName={"Spotify"}
           Icon={icons['Spotify']}
         />
       </div>
 
-      <Taskbar 
-        ForegroundReference = {ForegroundRef}
-        handleExplorer = {handleExplorer}
-        handleEdge = {handleEdge}
-        handleStore = {handleStore}
-        handleMail = {handleMail}
-        handleReddit = {handleReddit}
+      <Taskbar
+        ForegroundReference={ForegroundRef}
+        handleExplorer={handleExplorer}
+        handleEdge={handleEdge}
+        handleStore={handleStore}
+        handleMail={handleMail}
+        handleReddit={handleReddit}
       />
 
     </div>

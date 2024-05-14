@@ -9,26 +9,23 @@ function StartMenu(props) {
   let application = {
     'A': ['Alarms & Clock'],
     'C': ['Calculator', 'Calender', 'Camera', 'Cortana'],
-    'E': ['Excel'],
+    'E': ['Excel', "Edge"],
     'G': ['Groove Music'],
-    'M': ['Mail', 'Maps', 'Microsoft Edge', 'Microsoft Store']
+    'M': ['Mail', 'Maps'],
+    'S': ['Store']
   }
 
   let categories = {
     'Productivity': ['Office', 'Calender', 'Mail', 'Weather', 'Photos'],
-    'Explore': ['Microsoft Store', 'Microsoft Edge', 'Maps'],
+    'Explore': ['Store', 'Edge', 'Maps'],
     'Build': ['Visual Studio', 'Terminal', 'Notepad']
   }
 
   return (
     <>
       <motion.div 
-        initial = {{ y: 100 }}
-        animate = {{ y: 0 }}
-        transition={{ duration: 0.2, type: "easeOut"}}
         ref={props.Ref} 
-        className="absolute z-[22] bg-[#d1dbe9] h-[650px] w-[750px] text-black flex bottom-[45px] rounded-tr-xl shadow-xl"
-        style={{zIndex: 10}}
+        className="absolute z-[10] bg-[#d1dbe9] h-[650px] w-[750px] text-black flex bottom-[45px] rounded-tr-xl shadow-xl"
       >
         <div className="w-[7%] flex flex-col ml-3 mt-3 mb-3 justify-between items-center">
           <div>
