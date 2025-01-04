@@ -18,7 +18,6 @@ const Preloader = ({ images, onComplete }) => {
 
       try {
         await Promise.all(promises);
-        setIsVisible(false);
         setTimeout(() => {
           setIsVisible(false);
         }, 3000);
