@@ -45,7 +45,7 @@ const allImages = [
   'tool.svg',
   'VisualStudio.svg',
   'Volume.svg',
-  'wallpaper.webp',
+  'wallpaper.png',
   'weather.svg',
   'Wifi.svg',
 ];

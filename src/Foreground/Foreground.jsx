@@ -4,6 +4,7 @@ import Application from "../Components/Applications/Application"
 import Taskbar from "../Components/Taskbar"
 import icons from '../icons.json'
 import DesktopIcon from "../Components/Desktop/DesktopIcon";
+import Topbar from '../Components/Topbar/Topbar';
 function Foreground() {
 
   const ForegroundRef = useRef(null);
@@ -103,7 +104,7 @@ function Foreground() {
         handleMail={handleMail}
         handleReddit={handleReddit}
       />
-
+      <Topbar/>
     </div>
   )
 }
