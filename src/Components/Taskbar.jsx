@@ -61,6 +61,9 @@ function Taskbar(props) {
   function openReddit() {
     props.handleReddit();
   }
+  function openVscode() {
+    props.handleVscode();
+  }
 
   return (
     <>
@@ -101,6 +104,9 @@ function Taskbar(props) {
             <button onClick={openReddit}>
               <img src={icons['Reddit']} className="h-[28px] w-[28px]" />
             </button>
+            <button onClick={openVscode}>
+              <img src={icons['Visual Studio']} className="h-[28px] w-[28px]" />
+            </button>
           </div>
         </div>
 
@@ -108,7 +114,7 @@ function Taskbar(props) {
           <img src={icons['More']} className="h-[16px] w-[16px]" />
           <img src={icons['Wifi']} className="h-[16px] w-[16px]" />
           <img src={icons['Volume']} className="h-[20px] w-[20px]" />
-          <div className="flex flex-col items-center min-w-[70px]">
+          <div className="flex flex-col justify-between items-center min-w-[70px]">
             <span>{currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
             <span>{currentTime.toLocaleDateString()}</span>
           </div>

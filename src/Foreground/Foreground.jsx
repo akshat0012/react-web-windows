@@ -14,7 +14,8 @@ function Foreground() {
     Edge: false,
     Store: false,
     Mail: false,
-    Reddit: false
+    Reddit: false,
+    'Visual Studio': false
   });
 
   const toggleApplicationState = (appName) => {
@@ -49,6 +50,9 @@ function Foreground() {
 
   const handleMail = () => {
     toggleApplicationState('Mail');
+  }
+  const handleVscode = () => {
+    toggleApplicationState('Visual Studio');
   }
 
   return (
@@ -103,6 +107,7 @@ function Foreground() {
         handleStore={handleStore}
         handleMail={handleMail}
         handleReddit={handleReddit}
+        handleVscode={handleVscode}
       />
       <Topbar/>
     </div>
